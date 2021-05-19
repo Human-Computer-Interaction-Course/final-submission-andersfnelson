@@ -9,20 +9,25 @@
     <meta name="author" content="Anders Nelson">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/style.css">
+    <script src="./js/people.js"></script>
 </head>
 
 <body>
+
     <div id="content">
         <div id="headstruct">
             <div id="top_button_wrapper">
                 <!--Flex container for button items-->
-                <a href='index.html'><div class="button top_button"><img id="logo" src="img/dunwoody_logo.jpg" alt="Dunwoody logo">Home</div></a>
+                <a href='index.html'>
+                    <div class="button top_button"><img id="logo" src="img/dunwoody_logo.jpg" alt="Dunwoody logo">Home
+                    </div>
+                </a>
                 <a href='people.html'>
                     <div class="button top_button current">People</div>
                 </a>
                 <div class="button top_button">Courses</div>
                 <div class="button top_button">Plans</div>
-                <div class="button top_button">Reports</div>
+                <a href="reports.html"><div class="button top_button">Reports</div></a>
                 <div class="button top_button">Login/logout</div>
             </div>
         </div>
@@ -50,11 +55,14 @@
                     <th class="table_area">GPA</th>
                 </tr>
                 <tr>
-                    <td class="name">Anders Nelson<div class="profile_img_container"><img class="profile_img" src="img/anders.jpg"></div></td>
+                    <td class="name">Anders Nelson<div class="profile_img_container"><img class="profile_img"
+                                src="img/anders.jpg"></div>
+                    </td>
                     <td class="table_area">Currently enrolled</td>
                     <td class="table_area">LeAnn Simonson</td>
                     <td class="table_area">December 2021</td>
                     <td class="table_area">3.28</td>
+                    <td class="showdetails" onclick="showPeople(0)">Show details</td>
                 </tr>
                 <tr>
                     <td class="name">Jane Doe
@@ -64,15 +72,36 @@
                     <td class="table_area">Chris Fulton</td>
                     <td class="table_area">May 2022</td>
                     <td class="table_area">3.5</td>
+                    <td class="showdetails" onclick="showPeople(1)">Show details</td>
                 </tr>
                 <tr>
-                    <td class="name">Joe Student<div class='profile_img_container'><img class="profile_img" src="img/joestudent.jpg"></div></td>
+                    <td class="name">Joe Student<div class='profile_img_container'><img class="profile_img"
+                                src="img/joestudent.jpg"></div>
+                    </td>
                     <td class="table_area">Graduated</td>
                     <td class="table_area">LeAnn Simonson</td>
                     <td class="table_area">December 2020</td>
                     <td class="table_area">3.9</td>
+                    <td class="showdetails" onclick="showPeople(2)">Show details</td>
                 </tr>
             </table>
+            <br>
+            <br>
+            <div id="people" style="display: none;"><h2>Details</h2>
+                <table id="detailsTable">
+                    <tr><th>Current classes</th><th>Phone number</th><th>Employer</th></tr>
+                    
+                    <tr>
+                        <td><div id="currentClasses"></div></td>
+                        <td><div id="phoneNumber"></div></td>
+                        <td><div id="employer"></div></td>
+                    </tr>
+                </table>
+                
+                <br>
+                <div id='hidebutton' class="button top_button" style="margin: auto; padding-top: 20px;" onclick="hideDetails()">Hide</div>
+            </div>
+
         </div>
         <div id="footer_container">
             <div id="bottom_button_wrapper">
@@ -81,7 +110,7 @@
                 </a>
                 <div class="button bottom_button">Courses</div>
                 <div class="button bottom_button">Plans</div>
-                <div class="button bottom_button">Reports</div>
+                <a href="reports.html"><div class="button bottom_button">Reports</div></a>
                 <div class="button bottom_button hide_small">Terms of service</div>
                 <div class="button bottom_button hide_small">Contact</div>
                 <a href='about.html'>
@@ -92,7 +121,16 @@
         </div>
     </div>
 
-
+<script>
+    document.getElementById('detailsTable').addEventListener('mouseenter', function(){
+    // console.log('hover')
+    document.getElementById('detailsTable').style.backgroundColor='white';
+})
+document.getElementById('detailsTable').addEventListener('mouseout', function(){
+    // console.log('mouse out')
+    document.getElementById('detailsTable').style.backgroundColor='inherit';
+})
+</script>
 </body>
 
 </html>

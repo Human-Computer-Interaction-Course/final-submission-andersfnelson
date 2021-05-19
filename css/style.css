@@ -49,7 +49,7 @@ body{
     width: 90%;
     height: 100%;
     display: grid;
-    grid-template-rows: 200px 600px 200px;
+    grid-template-rows: 200px auto 200px;
     grid-template-columns: repeat(4, auto);
     column-gap: 5px;
     row-gap: 5px;
@@ -219,6 +219,27 @@ a{
     float: right;
     display: inline;
     justify-content: right;
+}
+table{
+    margin: auto;
+}
+#reports_container{
+    display: flex;
+    /* max-width: 1000px; */
+    height: auto;
+    flex-wrap: wrap;
+    margin: auto;
+}
+.report{
+    border: 1px solid white;
+    border-radius: 15px;
+    height: 100px;
+    min-width: 175px;
+    flex-grow: 1;
+    margin: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 @media (max-width: 1024px){
 
