@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>HCI Assignment 4 - People page</title>
+    <title>HCI Assignment 5 - People page</title>
     <meta name="description" content="Dunwoody advising application">
     <meta name="keywords" content="advising, student, academic plan, courses">
     <meta name="author" content="Anders Nelson">
@@ -27,7 +27,9 @@
                 </a>
                 <div class="button top_button">Courses</div>
                 <div class="button top_button">Plans</div>
-                <a href="reports.html"><div class="button top_button">Reports</div></a>
+                <a href="reports.html">
+                    <div class="button top_button">Reports</div>
+                </a>
                 <div class="button top_button">Login/logout</div>
             </div>
         </div>
@@ -87,19 +89,31 @@
             </table>
             <br>
             <br>
-            <div id="people" style="display: none;"><h2>Details</h2>
+            <div id="details" style="display: none; width: auto;">
+                <h2>Details</h2>
                 <table id="detailsTable">
-                    <tr><th>Current classes</th><th>Phone number</th><th>Employer</th></tr>
-                    
                     <tr>
-                        <td><div id="currentClasses"></div></td>
-                        <td><div id="phoneNumber"></div></td>
-                        <td><div id="employer"></div></td>
+                        <th>Current classes</th>
+                        <th>Phone number</th>
+                        <th>Employer</th>
+                        <th>Email</th>
+                    </tr>
+
+                    <tr>
+                        <td id="currentClasses">
+                        </td>
+                        <td id="phoneNumber">
+                        </td>
+                        <td id="employer">
+                        </td>
+                        <td id="email">
+                        </td>
                     </tr>
                 </table>
-                
+
                 <br>
-                <div id='hidebutton' class="button top_button" style="margin: auto; padding-top: 20px;" onclick="hideDetails()">Hide</div>
+                <div id='hidebutton' class="button top_button" style="margin: auto; padding-top: 20px;"
+                    onclick="hideDetails()">Hide</div>
             </div>
 
         </div>
@@ -110,7 +124,9 @@
                 </a>
                 <div class="button bottom_button">Courses</div>
                 <div class="button bottom_button">Plans</div>
-                <a href="reports.html"><div class="button bottom_button">Reports</div></a>
+                <a href="reports.html">
+                    <div class="button bottom_button">Reports</div>
+                </a>
                 <div class="button bottom_button hide_small">Terms of service</div>
                 <div class="button bottom_button hide_small">Contact</div>
                 <a href='about.html'>
@@ -121,16 +137,16 @@
         </div>
     </div>
 
-<script>
-    document.getElementById('detailsTable').addEventListener('mouseenter', function(){
-    // console.log('hover')
-    document.getElementById('detailsTable').style.backgroundColor='white';
-})
-document.getElementById('detailsTable').addEventListener('mouseout', function(){
-    // console.log('mouse out')
-    document.getElementById('detailsTable').style.backgroundColor='inherit';
-})
-</script>
+    <script>
+        document.getElementById('detailsTable').addEventListener('mouseenter', function () {
+            // console.log('hover')
+            document.getElementById('detailsTable').style.backgroundColor = 'white';
+        })
+        document.getElementById('detailsTable').addEventListener('mouseout', function () {
+            // console.log('mouse out')
+            document.getElementById('detailsTable').style.backgroundColor = 'inherit';
+        })
+    </script>
 </body>
 
 </html>

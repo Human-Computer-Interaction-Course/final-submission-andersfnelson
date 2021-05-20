@@ -241,6 +241,12 @@ table{
     justify-content: center;
     align-items: center;
 }
+#detailsTable{
+    transition: all .5s;
+}
+.showdetails{
+    cursor: pointer;
+}
 @media (max-width: 1024px){
 
     .hide_small{
